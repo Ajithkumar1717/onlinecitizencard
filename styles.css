@@ -1,0 +1,489 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transition: background 0.5s ease;
+}
+
+header:hover {
+    background: linear-gradient(45deg, #ffffff, #33ffff, #1aff1a, #e600e6);
+    color: #ffd700;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #000000;
+    transform: translateY(-3px);
+}
+
+#home {
+    background: linear-gradient(135deg, #5500ff, #6a00ff, #8b00ff, #a800ff);
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#home h1 {
+    font-size: 4rem;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInUp 1s ease-out forwards 0.3s;
+    color: #ffffff;
+}
+
+#home p {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards 0.6s;
+    color: #f0f0f0;
+}
+
+.home-paragraph {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #a2c2e4, #004a6f, #0066cc, #00aaff);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: justify;
+    color: #ffffff;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home-paragraph .label-left,
+.home-paragraph .label-right {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+}
+
+.home-paragraph .label-left {
+    left: 10px;
+}
+
+.home-paragraph .label-right {
+    right: 10px;
+}
+
+.home-paragraph .label-left:hover,
+.home-paragraph .label-right:hover {
+    color: #ffd700;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#about {
+    text-align: center;
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('AA.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+#about .profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#about .profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.2);
+}
+
+#about .about-box {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #e6dee9);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+    max-width: 600px;
+    text-align: justify;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#about .about-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#about .about-box p {
+    position: relative;
+    overflow: hidden;
+    line-height: 1.6;
+    padding: 0.5rem;
+}
+
+#about .about-box p span {
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #333;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fbc2eb, #e6dee9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#about .about-box p span:hover {
+    color: #007bff;
+    background: linear-gradient(90deg, #e6dee9, #fbc2eb, #fad0c4, #ff9a9e);
+}
+
+#about .about-box p span {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: var(--delay);
+    width: 100%;
+}
+
+#about .about-box p span:nth-child(1) { --delay: 0.2s; }
+#about .about-box p span:nth-child(2) { --delay: 0.4s; }
+#about .about-box p span:nth-child(3) { --delay: 0.6s; }
+
+#portfolio {
+    padding: 4rem 0;
+    text-align: center;
+    background: #f7f7f7;
+    position: relative;
+}
+
+/* Place portfolio-container above the banner visually */
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 2; /* Make sure the portfolio items are above the banner */
+    margin-bottom: -3rem; /* Adjust margin to space it properly */
+}
+
+.portfolio-banner {
+    position: relative;
+    background: url('banner.jpeg') no-repeat center center;
+    background-size: cover;
+    padding: 6rem 0;
+    color: white;
+    z-index: 1; /* Keep the banner under the portfolio items */
+    margin-top: 2rem; /* Add margin-top to space it from the portfolio items */
+}
+
+.portfolio-banner h2 {
+    font-size: 3rem;
+    margin: 0;
+    position: relative;
+    z-index: 3;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.portfolio-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.portfolio-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(33.333% - 2rem);
+    max-width: calc(33.333% - 2rem);
+    padding: 1rem;
+    text-align: left;
+}
+
+.portfolio-item h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.portfolio-item p {
+    margin: 0.5rem 0 0;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item.highlight-on-hover {
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #e6dee9);
+}
+
+.portfolio-item.highlight-on-hover:hover {
+    background: linear-gradient(135deg, #fbc2eb, #e6dee9, #ff9a9e, #fad0c4);
+    color: #007bff;
+}
+#contact {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease forwards;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: #ffd700;
+}
+
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.75rem;
+    color: #ffd700;
+}
+
+.focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #ffd700;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.form-group input:focus ~ .focus-border,
+.form-group textarea:focus ~ .focus-border {
+    transform: scaleX(1);
+}
+
+.submit-btn {
+    background: #ffd700;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* General Footer Styling */
+footer {
+    background: linear-gradient(135deg, #000, #444);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Storm Animation Effect */
+footer::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 60%);
+    opacity: 0.5;
+    animation: stormEffect 5s infinite linear;
+    z-index: 0;
+}
+
+/* Footer Text Styling */
+footer p {
+    position: relative;
+    z-index: 1;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Keyframes for Storm Effect Animation */
+@keyframes stormEffect {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+        transform: translate(50%, 50%) rotate(180deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+.social-icons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007BFF; /* Change to the color you prefer */
+}
